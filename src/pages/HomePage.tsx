@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import MovieList from '../components/MovieList';
 import { Movie } from '../types';
 import { Container, Typography, Button, Grid, Input } from '@mui/material';
+import { useMovieStore } from '../store/movieStore';
 
 const HomePage: React.FC = () => {
-    const [title, setTitle] = useState('')
-    const [searchTitle, setSearchTitle] = useState('')
-    const [movies, setMovies] = useState<Movie[]>([])
+    const {title, setTitle, movies, setMovies, searchTitle, setSearchTitle} = useMovieStore()
+    // const [title, setTitle] = useState('')
+    // const [searchTitle, setSearchTitle] = useState('')
+    // const [movies, setMovies] = useState<Movie[]>([])
 
     const searchMovies = async () => {
         try {
