@@ -59,7 +59,7 @@ const HomePage: FC = () => {
             />
             <Button onClick={searchMovies}>Search</Button>
             {searchTitle && (
-                <Typography variant="h6">Search results for "{searchTitle}"</Typography>
+                <Typography variant="h6">Search "{searchTitle}"</Typography>
             )}
             <Grid container style={{ marginTop: '20px' }}>
                 <MovieList movies={movies} />

@@ -1,19 +1,18 @@
 import { FC, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 import { Container, Typography, Card, CardContent, CardMedia, Grid, Box } from '@mui/material'
+import { useMovieStore } from '../store/movieStore';
 
 const MoviePage: FC = () => {
     const { id } = useParams<{ id: string }>()
-    const [movie, setMovie] = useState<Record<string, any> | null>(null)
+    const { movies } = useMovieStore()
+    const [movie, setMovie] = useState<any>(null)
+    
+    const movieS = movies.find(movie => movie.imdbID === id)
     
     useEffect(() => {
-        const fetchMovieDetails = async () => {
-            const response = await fetch(`/api/movies/${id}`)
-            setMovie(await response.json())
-        }
-
-    fetchMovieDetails()
-    }, [id])
+      setMovie(movieS || null)
+    })
     
     if (!movie){
         return <div>Loading...</div>
