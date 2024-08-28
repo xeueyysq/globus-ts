@@ -7,9 +7,10 @@ interface MovieItemProps {
     title: string
     year: string
     poster: string
+    actors: string
 }
 
-const MovieItem: React.FC<MovieItemProps> = ({id, title, year, poster}) => {
+const MovieItem: React.FC<MovieItemProps> = ({id, title, year, poster, actors}) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -37,6 +38,7 @@ const MovieItem: React.FC<MovieItemProps> = ({id, title, year, poster}) => {
                         <CardContent>
                             <Typography variant="h6">{title}</Typography>
                             <Typography variant="body2" color="textSecondary">{year}</Typography>
+                            <Typography variant="body1">{actors}</Typography>
                         </CardContent>
                     </Grid>
                 </Grid>

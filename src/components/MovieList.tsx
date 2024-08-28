@@ -16,6 +16,7 @@ const MovieList: React.FC<MovieListProps> = ({ movies}) => {
                 title={movie.Title}
                 year={movie.Year}
                 poster={movie.Poster}
+                actors={movie.Actors}
                 />
             ))}
         </ul>
