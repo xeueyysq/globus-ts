@@ -22,20 +22,26 @@ const MoviePage: FC = () => {
     return (
         <Container maxWidth="md">
           <Card sx={{backgroundColor: '#1F1F1F', color: 'white', marginTop: '50px'}}>
-            <Box display="flex" flexDirection={{ xs: 'column', md: 'row' }} p={2}>
-              <CardMedia
-                component="img"
-                height="400"
-                image={movie.Poster}
-                alt={movie.Title}
-              />
+            <Grid container display="flex" flexDirection={{ xs: 'column', md: 'row' }} p={2}>
+              <Grid>
+                <CardMedia
+                  component="img"
+                  height="400"
+                  image={movie.Poster}
+                  alt={movie.Title}
+                  style={{
+                    height: '450px',
+                    width: '300px'
+                  }}
+                />
+              </Grid>
               <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <Box>
                   <Typography variant="h4" gutterBottom>{movie.Title}</Typography> 
                   <Typography variant="h6" gutterBottom>{movie.Year}</Typography> 
                   <Typography variant="body1">{movie.Plot}</Typography> 
                 </Box>
-                <Box display={'flex'}>
+                <Box display={'flex'} mt={'20px'}>
                   {movie.Ratings[1] && (
                     <div style={{marginRight: 20}}>
                       <img src='../public/images/tomatoe.png' alt={movie.Title} height={25} />
@@ -53,7 +59,7 @@ const MoviePage: FC = () => {
                   </div>
                 </Box>
               </CardContent>
-            </Box>
+            </Grid>
           </Card>
         </Container>
       );

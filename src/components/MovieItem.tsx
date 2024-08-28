@@ -17,19 +17,23 @@ const MovieItem: React.FC<MovieItemProps> = ({id, title, year, poster}) => {
     }
 
     return (
-        <Grid item xs={12} sm={6} md={12} style={{marginBottom: 20}}> 
+        <Grid style={{ marginBottom: 20 }}> 
           <Card onClick={handleClick}>
             <CardActionArea> 
                 <Grid container spacing={2}>
-                    <Grid item xs={12} md={3.5}>
+                    <Grid item>
                         <CardMedia
                             component="img"
-                            height="300"
                             image={poster}
                             alt={title}
+                            style={{
+                                width: '200px',
+                                height: '300px',
+                                objectFit: 'cover'
+                            }}
                         /> 
                     </Grid>
-                    <Grid item xs={12} md={8}>
+                    <Grid item xs>
                         <CardContent>
                             <Typography variant="h6">{title}</Typography>
                             <Typography variant="body2" color="textSecondary">{year}</Typography>
@@ -42,4 +46,4 @@ const MovieItem: React.FC<MovieItemProps> = ({id, title, year, poster}) => {
       );
 }
 
-export default MovieItem
+export default MovieItem;
