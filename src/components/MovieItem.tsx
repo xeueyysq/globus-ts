@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card, CardActionArea, CardContent, CardMedia, Typography, Grid } from '@mui/material';
 
@@ -10,7 +10,7 @@ interface MovieItemProps {
     actors: string
 }
 
-const MovieItem: React.FC<MovieItemProps> = ({id, title, year, poster, actors}) => {
+const MovieItem: FC<MovieItemProps> = ({id, title, year, poster, actors}) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -37,8 +37,8 @@ const MovieItem: React.FC<MovieItemProps> = ({id, title, year, poster, actors}) 
                     <Grid item xs>
                         <CardContent>
                             <Typography variant="h6">{title}</Typography>
-                            <Typography variant="body2" color="textSecondary">{year}</Typography>
-                            <Typography variant="body1">{actors}</Typography>
+                            <Typography variant="body2" color="textSecondary" gutterBottom>{year}</Typography>
+                            <Typography variant="body1" gutterBottom>{actors}</Typography>
                         </CardContent>
                     </Grid>
                 </Grid>
