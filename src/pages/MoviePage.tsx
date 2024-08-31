@@ -4,6 +4,7 @@ import { Container, Typography, Card, CardContent, CardMedia, Grid2, Box, Divide
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
 import { useMovieStore } from '../store/movieStore';
 import { Movie } from '../types';
+import MovieAppBar from '../components/MovieAppBar';
 
 const MoviePage: FC = () => {
     const navigate = useNavigate()
@@ -35,7 +36,8 @@ const MoviePage: FC = () => {
 
     return (
         <Container maxWidth="md">
-          <Card sx={{backgroundColor: '#1F1F1F', color: 'white', marginTop: '50px', maxWidth: '1500px'}}>
+          <MovieAppBar/>
+          <Card sx={{backgroundColor: '#1F1F1F', color: 'white', marginTop: '80px', maxWidth: '1500px'}}>
             <Grid2 container display="flex" flexDirection={'column'}  p={2}>
               <Grid2 container>
                 <CardMedia
@@ -93,10 +95,11 @@ const MoviePage: FC = () => {
                 <Box>
                   <Link 
                     href={`https://www.imdb.com/title/${id}`} 
-                    rel='noopener' 
                     underline='hover' 
-                    color='inherit'>
-
+                    color='inherit'
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    >
                     <Typography 
                       variant="h4" 
                       gutterBottom

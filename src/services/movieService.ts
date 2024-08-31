@@ -1,12 +1,7 @@
-import { useMovieStore } from "../store/movieStore";
 import { Movie } from "../types";
-
-const { setSearchTitle, setMovies } = useMovieStore()
 
 export const searchMovies = async (title: string) => {
     try {
-        setSearchTitle(title);
-
         const response = await fetch(`/api/movies?q=${title}`);
         if (!response.ok) {
             throw new Error(`Failed to fetch movies: ${response.statusText}`);
@@ -16,7 +11,7 @@ export const searchMovies = async (title: string) => {
         const movieList = data.Search || [];
 
         const movieDetails = await getDetails(movieList);
-        setMovies(movieDetails);
+        return movieDetails
     } catch (error) {
         console.error('Error fetching movies:', error);
     }
