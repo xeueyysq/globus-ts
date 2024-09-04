@@ -1,8 +1,10 @@
 import { Movie } from "../types";
 
-export const searchMovies = async (title: string) => {
+export const searchMovies = async (title: string, type: string) => {
     try {
-        const response = await fetch(`/api/movies?q=${title}`);
+        const url = `/api/movies/?type=${type}&title=${title}`
+
+        const response = await fetch(url);
         if (!response.ok) {
             throw new Error(`Failed to fetch movies: ${response.statusText}`);
         }
@@ -11,7 +13,7 @@ export const searchMovies = async (title: string) => {
         const movieList = data.Search || [];
 
         const movieDetails = await getDetails(movieList);
-        return movieDetails
+        return movieDetails;
     } catch (error) {
         console.error('Error fetching movies:', error);
     }

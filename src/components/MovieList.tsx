@@ -1,4 +1,5 @@
 import React from 'react';
+import { Grid2, Box } from '@mui/material';
 import MovieItem from './MovieItem';
 import { Movie } from '../types';
 
@@ -8,7 +9,7 @@ interface MovieListProps {
 
 const MovieList: React.FC<MovieListProps> = ({ movies}) => {
     return (
-        <ul>
+        <Grid2>
             {movies.map((movie) => (
                 <MovieItem
                 key={movie.imdbID}
@@ -19,7 +20,7 @@ const MovieList: React.FC<MovieListProps> = ({ movies}) => {
                 actors={movie.Actors}
                 />
             ))}
-        </ul>
+        </Grid2>
     )
 }
 

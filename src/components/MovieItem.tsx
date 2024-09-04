@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Card, CardActionArea, CardContent, CardMedia, Typography, Grid } from '@mui/material';
+import { Card, CardActionArea, CardContent, CardMedia, Typography, Grid2 } from '@mui/material';
 
 interface MovieItemProps {
     id: string
@@ -18,11 +18,11 @@ const MovieItem: FC<MovieItemProps> = ({id, title, year, poster, actors}) => {
     }
 
     return (
-        <Grid style={{ marginBottom: 20 }}> 
+        <Grid2 style={{ marginBottom: 20 }}> 
           <Card onClick={handleClick}>
             <CardActionArea> 
-                <Grid container spacing={2}>
-                    <Grid item>
+                <Grid2 container spacing={2}>
+                    <Grid2>
                         <CardMedia
                             component="img"
                             image={poster}
@@ -33,18 +33,18 @@ const MovieItem: FC<MovieItemProps> = ({id, title, year, poster, actors}) => {
                                 objectFit: 'cover'
                             }}
                         /> 
-                    </Grid>
-                    <Grid item xs>
+                    </Grid2>
+                    <Grid2>
                         <CardContent>
                             <Typography variant="h6">{title}</Typography>
                             <Typography variant="body2" color="textSecondary" gutterBottom>{year}</Typography>
                             <Typography variant="body1" gutterBottom>{actors}</Typography>
                         </CardContent>
-                    </Grid>
-                </Grid>
+                    </Grid2>
+                </Grid2>
             </CardActionArea>
           </Card>
-        </Grid>
+        </Grid2>
       );
 }
 
