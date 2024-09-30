@@ -23,7 +23,7 @@ const MovieAppBar: FC = () => {
     };
 
     return (
-        <AppBar sx={{ backgroundColor: 'rgb(18, 18, 18)', height: '56px' }}>
+        <AppBar position='static' sx={{ backgroundColor: 'rgb(18, 18, 18)', height: '56px' }}>
             <Toolbar sx={{ marginLeft: '20%', display: 'flex', alignItems: 'center' }}>
                 <Link href='/' sx={{ display: 'flex', alignItems: 'center'}}>
                     <img src='/public/images/imdb_logo.png' alt='Site Logo' height={'32px'} />

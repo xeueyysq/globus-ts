@@ -12,16 +12,16 @@ const SearchPage: FC = () => {
     return (
         <Grid2>
             <MovieAppBar/>
-            <Grid2 mt={9}>
-                {searchTitle && (
-                    <Typography variant="h6">Search "{searchTitle}"</Typography>
+            {searchTitle && (
+                    <Typography mt={3} ml={9} gutterBottom variant="h6">Search "{searchTitle}"</Typography>
                 )}
-                    <Grid2 display={'flex'}>
-                        <MovieList movies={movies} />
-                        <Grid2>
-                            <SearchParams />
-                        </Grid2>
-                    </Grid2>
+            <Grid2
+                container
+                spacing={10}
+                justifyContent="center"
+            >
+                <MovieList movies={movies} />
+                <SearchParams />
             </Grid2>
         </Grid2>
     );

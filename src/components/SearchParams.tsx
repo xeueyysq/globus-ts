@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Grid2, Chip } from '@mui/material';
+import { Grid2, Chip, Typography } from '@mui/material';
 import { useMovieStore } from '../store/movieStore';
 
 const SearchParams: FC = () => {
@@ -38,9 +38,11 @@ const SearchParams: FC = () => {
         "Commercial"
       ];
     return(
-        <Grid2>
+        <Grid2 maxWidth={'30%'}>
+            <Typography fontWeight={'bold'}>Search filters</Typography>
             {genresList.map((genre: string) => (
-                <Chip key={genre} label={genre} variant="outlined" sx={{
+                <Chip key={genre} label={genre} variant="outlined"
+                 sx={{
                     color: '#090A0B',   
                     fontSize: '15px',
                     borderColor: 'rgba(0, 0, 0, 0.3)',

@@ -18,7 +18,7 @@ const MovieItem: FC<MovieItemProps> = ({id, title, year, poster, actors}) => {
     }
 
     return (
-        <Grid2 style={{ marginBottom: 20 }}> 
+        <Grid2 mb={3}> 
           <Card onClick={handleClick}>
             <CardActionArea> 
                 <Grid2 container spacing={2}>
@@ -30,11 +30,11 @@ const MovieItem: FC<MovieItemProps> = ({id, title, year, poster, actors}) => {
                             style={{
                                 width: '200px',
                                 height: '300px',
-                                objectFit: 'cover'
+                                objectFit: 'cover',
                             }}
                         /> 
                     </Grid2>
-                    <Grid2>
+                    <Grid2 >
                         <CardContent>
                             <Typography variant="h6">{title}</Typography>
                             <Typography variant="body2" color="textSecondary" gutterBottom>{year}</Typography>

@@ -9,13 +9,11 @@ const App: React.FC = () => {
   return (
     <Router>
       <CssBaseline />
-      <Container maxWidth="md">
         <Routes>
           <Route path="/" element={<HomePage />}/>
           <Route path="/search/:title" element={<SearchPage />}/>
           <Route path="/movie/:id" element={<MoviePage />}/>
         </Routes>
-      </Container>
     </Router>
   )
 }

@@ -9,7 +9,7 @@ interface MovieListProps {
 
 const MovieList: React.FC<MovieListProps> = ({ movies}) => {
     return (
-        <Grid2>
+        <Grid2 width={'55%'}>
             {movies.map((movie) => (
                 <MovieItem
                 key={movie.imdbID}
